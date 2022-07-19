@@ -1,6 +1,19 @@
-* { 
-margin: 0;
-padding: 0;
-box-sizing: 0;
-
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+  }
+  body {
+    background: linear-gradient(90deg, #e66465, #9198e5);
+  }
+  header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  
