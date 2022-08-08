@@ -4,6 +4,10 @@
   box-sizing: 0;
 }
 
+i {
+  pointer-events: none;
+}
+
 body {
   background: linear-gradient(90deg, #e66465, #9198e5);
 }
@@ -70,6 +74,7 @@ section {
     display: flex;
     align-items: center;
     margin: 0.2rem 0rem;
+    transition: all 0.25s ease;
 
     p {
       background-color: white;
@@ -78,33 +83,46 @@ section {
       font-size: 1.75rem;
 
     }
+
     p.todo-text {
       width: 50%;
     }
+
     p.todo-time {
       width: 20%;
       text-align: center;
     }
+
     button {
       padding: 0.25rem 0.5rem;
       font-size: 1.75rem;
       border: none;
       cursor: pointer;
-      color:white;
+      color: white;
     }
+
     button.complete {
       background-color: green;
     }
+
     button.trash {
       background-color: red;
     }
   }
 }
 
-@keyframes scaleUp{
-  from{
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+
+}
+
+@keyframes scaleUp {
+  from {
     transform: scale(0);
   }
+
   to {
     transform: scale(1);
   }

@@ -23,6 +23,10 @@ add.addEventListener("click",e=>{
     let completeButton = document.createElement("button");
     completeButton.classList.add("complete");
     completeButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+    completeButton.addEventListener("click",e=>{
+        let todoItem = e.target.parentElement;
+        todoItem.classList.toggle("done");
+    })
 
     let trashButton = document.createElement("button");
     trashButton.classList.add("trash");
