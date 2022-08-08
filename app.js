@@ -14,11 +14,25 @@ add.addEventListener("click",e=>{
     todo.classList.add("todo");
     let text = document.createElement("p");
     text.innerText = todotext;
+    text.classList.add("todo-text");
     let time = document.createElement("p");
     time.classList.add("todo-time");
     time.innerText = todomonth + "/" + tododate;
     todo.appendChild(text);
     todo.appendChild(time);
+    let completeButton = document.createElement("button");
+    completeButton.classList.add("complete");
+    completeButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+    let trashButton = document.createElement("button");
+    trashButton.classList.add("trash");
+    trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
+    todo.appendChild(completeButton);
+    todo.appendChild(trashButton);
+    
+    todo.style.animation = "scaleUp 0.3s forwards";
+
     section.appendChild(todo);
 
 
