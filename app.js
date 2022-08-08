@@ -4,20 +4,22 @@ add.addEventListener("click",e=>{
     e.preventDefault();
     console.log(e.target.parentElement);
     let form = e.target.parentElement;
-    let todotext = form.children[0].value;
-    let todomonth = form.children[1].value;
-    let tododate = form.children[2].value;
-    console.log(todotext);
-    console.log(todomonth);
-    console.log(tododate);
+    let todoText = form.children[0].value;
+    let todoMonth = form.children[1].value;
+    let todoDate = form.children[2].value;
+    if (todoText === ""){
+        alert("Please Enter some Text");
+        return;
+    }
+
     let todo = document.createElement("div");
     todo.classList.add("todo");
     let text = document.createElement("p");
-    text.innerText = todotext;
+    text.innerText = todoText;
     text.classList.add("todo-text");
     let time = document.createElement("p");
     time.classList.add("todo-time");
-    time.innerText = todomonth + "/" + tododate;
+    time.innerText = todoMonth + "/" + todoDate;
     todo.appendChild(text);
     todo.appendChild(time);
     let completeButton = document.createElement("button");
@@ -45,9 +47,7 @@ add.addEventListener("click",e=>{
     todo.appendChild(trashButton);
     
     todo.style.animation = "scaleUp 0.3s forwards";
-    
-
+    form.children[0].value = "";
     section.appendChild(todo);
-
 
 })
