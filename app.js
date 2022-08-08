@@ -31,11 +31,21 @@ add.addEventListener("click",e=>{
     let trashButton = document.createElement("button");
     trashButton.classList.add("trash");
     trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    trashButton.addEventListener("click",e=>{
+        let trashItem = e.target.parentElement;
+        trashItem.addEventListener("animationend", () => {
+            trashItem.remove();
+          });
+
+        trashItem.style.animation = "scaleDown 0.3s forwards";
+
+    })
 
     todo.appendChild(completeButton);
     todo.appendChild(trashButton);
     
     todo.style.animation = "scaleUp 0.3s forwards";
+    
 
     section.appendChild(todo);
 

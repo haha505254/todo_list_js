@@ -128,3 +128,15 @@ section {
   }
 
 }
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+    
+  }
+
+}
